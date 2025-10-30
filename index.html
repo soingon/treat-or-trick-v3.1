@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Trick or Treat — QR Hunt (v3)</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app" class="container">
+    <header>
+      <h1>Trick or Treat — QR Hunt</h1>
+      <div id="user-area"></div>
+    </header>
+
+    <main>
+      <section id="game-info" class="card">
+        <div class="info-row">
+          <div>Players allowed: <strong>80</strong></div>
+          <div>QR codes total: <strong>10</strong></div>
+          <div id="timer">Timer: --:--</div>
+        </div>
+        <p class="muted">Find QR codes around the school and scan them with your camera to gain points. Admins control the game start/end.</p>
+      </section>
+
+      <section id="scanner" class="card">
+        <h2>Scan QR with your camera</h2>
+        <div id="reader" style="width:400px"></div>
+        <div id="scan-result" class="muted">No result yet</div>
+      </section>
+
+      <section id="qrs" class="card">
+        <h2>QR Codes (images for printing)</h2>
+        <div id="qr-grid" class="qr-grid"></div>
+      </section>
+
+      <section id="leaderboard" class="card">
+        <h2>Leaderboard</h2>
+        <ol id="leaderboard-list"></ol>
+        <a id="refresh-leaderboard" class="btn">Refresh</a>
+      </section>
+
+      <section id="admin-link" class="card">
+        <a href="admin.html" class="btn">Admin Page</a>
+      </section>
+    </main>
+
+    <footer>
+      <small>Admin account: create a Firebase Auth user for the teacher and set password to <strong>happytreats!1234</strong>. Then add that user to the 'admins' collection (see README).</small>
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/html5-qrcode@2.3.8/minified/html5-qrcode.min.js"></script>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/firebase.js"></script>
+</body>
+</html>
